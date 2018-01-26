@@ -11,5 +11,10 @@
 |
 */
 
-Route::post('/', 'aulaController@add')->name('nomeDaRota');
+Route::post('/', 'UsuarioController@store')->name('nomeDaRota');
 Route::get('/', 'aulaController@add')->name('nomeDaRota');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/apagar/{id}', 'UsuarioController@destroy')->name('apagar');
